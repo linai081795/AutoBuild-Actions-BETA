@@ -21,7 +21,7 @@ Firmware_Diy_Core() {
 	Default_Flag=AUTO
 	# 固件标签 (名称后缀), 适用不同配置文件, AUTO: [自动识别]
 	
-	Default_IP="192.168.1.1"
+	Default_IP="192.168.100.12"
 	# 固件 IP 地址
 	
 	Default_Title="Powered by AutoBuild-Actions"
@@ -36,7 +36,7 @@ Firmware_Diy_Core() {
 	Fw_MFormat=AUTO
 	# 自定义固件格式, AUTO: [自动识别]
 	
-	Regex_Skip="packages|buildinfo|sha256sums|manifest|kernel|rootfs|factory|itb|profile|ext4|json"
+	Regex_Skip="sha256sums|manifest|kernel|rootfs|factory|itb|profile|ext4|json"
 	# 输出固件时丢弃包含该内容的固件/文件
 	
 	AutoBuild_Features=true
