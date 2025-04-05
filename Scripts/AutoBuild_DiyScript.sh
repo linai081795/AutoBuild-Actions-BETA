@@ -101,6 +101,7 @@ EOF
 		
 		rm -r ${FEEDS_LUCI}/luci-theme-argon*
 		AddPackage other vernesong OpenClash dev
+		AddPackage kenzok8  kenzok8 small-package master
 		AddPackage other jerrykuku luci-app-argon-config master
 		AddPackage other sbwml luci-app-mosdns v5-lua
 		AddPackage themes jerrykuku luci-theme-argon 18.06
