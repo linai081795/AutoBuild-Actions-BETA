@@ -172,7 +172,7 @@ EOF
 
 				# tailscale
 				AddPackage tailscale asvow luci-app-tailscale main
-				rm -r ${FEEDS_LUCI}/luci-app-tailscale
+				# rm -r ${FEEDS_LUCI}/luci-app-tailscale
 				sed -i '/\/etc\/init\.d\/tailscale/d;/\/etc\/config\/tailscale/d;' feeds/packages/net/tailscale/Makefile
 			;;
 			esac
