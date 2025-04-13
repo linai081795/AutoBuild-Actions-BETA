@@ -75,6 +75,7 @@ env:
 # Cache 加速编译
   CACHE_ACCELERATE: true
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+  SSH_ACTION: ${{ github.event.inputs.SSH_ACTION }}
 ### 结束
 ### 请按需求修改以上内容
 
@@ -129,7 +130,6 @@ jobs:
 
     - name: Load Custom Variables
       run: |
-        export INPUTS_SSH_ACTION="${{ github.event.inputs.SSH_ACTION }}"
         if [ -n "${{ github.event.inputs.Tempoary_CONFIG }}" ]
         then
             if [ -f "$GITHUB_WORKSPACE/Configs/${{ github.event.inputs.Tempoary_CONFIG }}" ]
@@ -242,6 +242,7 @@ jobs:
         make defconfig
         make download -j8
     - name: SSH远程连接（make menuconfig）
+      if: env.SSH_ACTION == 'true'
       uses: danshui-git/debugger-action@main
 
     - name: Build OpenWrt
