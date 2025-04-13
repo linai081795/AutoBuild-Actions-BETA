@@ -172,6 +172,7 @@ EOF
 
 				# tailscale
 				AddPackage tailscale asvow luci-app-tailscale main
+				sed -i 's/admin\/services/admin\/vpn/' ${WORK}/package/tailscale/luci-app-tailscale/root/usr/share/luci/menu.d/luci-app-tailscale.json
 				# rm -r ${FEEDS_LUCI}/luci-app-tailscale
 				sed -i '/\/etc\/init\.d\/tailscale/d;/\/etc\/config\/tailscale/d;' feeds/packages/net/tailscale/Makefile
 			;;
