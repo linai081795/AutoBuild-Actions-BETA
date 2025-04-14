@@ -148,6 +148,7 @@ EOF
 				git clone https://github.com/kenzok8/golang ${WORK}/feeds/packages/lang/golang
 
 				# sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${FEEDS_PKG}/ttyd/files/ttyd.config
+				AddPackage passwall-depends xiaorouji openwrt-passwall-packages main
 				AddPackage passwall xiaorouji openwrt-passwall main
 				AddPackage passwall2 xiaorouji openwrt-passwall2 main
 
