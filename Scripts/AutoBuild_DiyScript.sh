@@ -145,7 +145,7 @@ EOF
 			x86_64)
 				# 更新golang
 				rm -rf feeds/packages/lang/golang
-				git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+				git clone https://github.com/kenzok8/golang ${WORK}/feeds/packages/lang/golang
 
 				# sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${FEEDS_PKG}/ttyd/files/ttyd.config
 				AddPackage passwall xiaorouji openwrt-passwall main
