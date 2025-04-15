@@ -148,9 +148,10 @@ EOF
 				git clone https://github.com/kenzok8/golang ${WORK}/feeds/packages/lang/golang
 
 				# sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${FEEDS_PKG}/ttyd/files/ttyd.config
-				AddPackage passwall-depends xiaorouji openwrt-passwall-packages main
 				AddPackage passwall xiaorouji openwrt-passwall main
-				AddPackage passwall2 xiaorouji openwrt-passwall2 main
+				# AddPackage passwall2 xiaorouji openwrt-passwall2 main
+				AddPackage passwall-depends xiaorouji openwrt-passwall-packages main
+				rm -rf ${FEEDS_PKG}/net/{chinadns*,hysteria,geoview,trojan*,xray*,v2ray*,sing*}
 
 				rm -r ${FEEDS_LUCI}/luci-app-passwall
 				AddPackage other WROIATE luci-app-socat main
@@ -179,6 +180,7 @@ EOF
 				AddPackage tailscale asvow luci-app-tailscale main
 				sed -i 's/admin\/services/admin\/vpn/' ${WORK}/package/tailscale/luci-app-tailscale/root/usr/share/luci/menu.d/luci-app-tailscale.json
 				# rm -r ${FEEDS_LUCI}/luci-app-tailscale
+
 				sed -i '/\/etc\/init\.d\/tailscale/d;/\/etc\/config\/tailscale/d;' feeds/packages/net/tailscale/Makefile
 			;;
 			esac
