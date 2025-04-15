@@ -81,7 +81,7 @@ env:
 
 jobs:
   Compile:
-    runs-on: self-hosted
+    runs-on: server
     permissions:
       issues: write
       pull-requests: write
