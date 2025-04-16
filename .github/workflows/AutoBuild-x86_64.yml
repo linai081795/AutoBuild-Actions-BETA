@@ -188,6 +188,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
+        sudo rm -rf /tmp/*
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
         sudo -E apt update
